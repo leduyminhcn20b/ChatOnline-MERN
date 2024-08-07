@@ -1,0 +1,38 @@
+{
+  "homepage": "https://leduyminhcn20b/github.io/MERN-DEPLOY",
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "predeploy": "npm run build && mkdir -p build && cp -r front-end/build/* build/",
+    "deploy": "gh-pages -d build",
+    "start": "npm-run-all --parallel start:back-end start:front-end",
+    "start:back-end": "nodemon back-end/server.js",
+    "start:front-end": "cd front-end && npm start",
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix front-end && npm run build --prefix front-end"
+  },
+  "author": "MinhLee",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "gh-pages": "^6.1.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "nodemon": "^3.0.1",
+    "react": "^16.0.0",
+    "react-notification-badge": "^1.5.1",
+    "socket.io": "^4.7.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "npm-run-all": "^4.1.5"
+  }
+}
